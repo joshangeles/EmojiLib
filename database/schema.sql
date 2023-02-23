@@ -10,7 +10,7 @@ CREATE TABLE "public"."emojis" (
 	"emojiId" serial NOT NULL,
 	"name" TEXT NOT NULL,
 	"url" TEXT NOT NULL,
-	"createdAt" serial NOT NULL,
+	"createdAt" timestamptz(6) not null default now(),
 	"userId" int NOT NULL,
 	CONSTRAINT "emojis_pk" PRIMARY KEY ("emojiId")
 ) WITH (
