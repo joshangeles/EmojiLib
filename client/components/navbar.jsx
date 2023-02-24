@@ -8,7 +8,7 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 
 export default function HomeNavbar() {
   return (
-    <>
+    <div>
       {[false, 'sm', 'md', 'lg', 'xl', 'xxl'].map(size => (
         <Navbar key={size} expand={size} className="mb-3 px-lg-5" bg="dark" variant="dark" fixed="top">
           <Container fluid>
@@ -47,6 +47,6 @@ export default function HomeNavbar() {
           </Container>
         </Navbar>
       ))}
-    </>
+    </div>
   );
 }
