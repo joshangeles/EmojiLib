@@ -9,20 +9,20 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 export default function HomeNavbar() {
   return (
     <>
-      {[false, 'sm', 'md', 'lg', 'xl', 'xxl'].map(expand => (
-        <Navbar key={expand} expand={expand} className="mb-3 px-lg-5" bg="dark" variant="dark" fixed="top">
+      {[false, 'sm', 'md', 'lg', 'xl', 'xxl'].map(size => (
+        <Navbar key={size} expand={size} className="mb-3 px-lg-5" bg="dark" variant="dark" fixed="top">
           <Container fluid>
             <Navbar.Brand href="#">EmojiLib</Navbar.Brand>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${size}`} />
             <Navbar.Offcanvas
-              id={`offcanvasNavbar-expand-${expand}`}
-              aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
+              id={`offcanvasNavbar-expand-${size}`}
+              aria-labelledby={`offcanvasNavbarLabel-expand-${size}`}
               placement="start"
             >
               <Offcanvas.Header closeButton
                 className="bg-dark"
                 data-bs-theme="dark" >
-                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
+                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${size}`}>
                   EmojiLib
                 </Offcanvas.Title>
               </Offcanvas.Header>
