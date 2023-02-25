@@ -1,3 +1,9 @@
 #root {
   margin-top: 3.5rem;
 }
+
+img {
+  width: 128px;
+  height: 128px;
+  object-fit: contain;
+}

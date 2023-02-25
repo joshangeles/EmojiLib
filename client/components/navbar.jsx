@@ -7,10 +7,15 @@ import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
 export default function HomeNavbar() {
+
+  function searchHandler() {
+
+  }
+
   return (
     <div>
-      {[false, 'sm', 'md', 'lg', 'xl', 'xxl'].map(size => (
-        <Navbar key={size} expand={size} className="mb-3 px-lg-5" bg="dark" variant="dark" fixed="top">
+      {[false, 'sm', 'md', 'lg'].map(size => (
+        <Navbar key={size} expand={size} className="mb-3 px-lg-5 bg-body-tertiary" bg="dark" variant="dark" fixed="top">
           <Container fluid>
             <Navbar.Brand href="#">EmojiLib</Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${size}`} />
@@ -19,14 +24,12 @@ export default function HomeNavbar() {
               aria-labelledby={`offcanvasNavbarLabel-expand-${size}`}
               placement="start"
             >
-              <Offcanvas.Header closeButton
-                className="bg-dark"
-                data-bs-theme="dark" >
+              <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${size}`}>
                   EmojiLib
                 </Offcanvas.Title>
               </Offcanvas.Header>
-              <Offcanvas.Body data-bs-theme="dark" className="bg-dark text-white">
+              <Offcanvas.Body data-bs-theme="dark" className="bg-body-tertiary text-white">
                 <Nav className="justify-content-start flex-grow-1 pe-3">
                   <Nav.Link href="login">Login</Nav.Link>
                   <Nav.Link href="library">Library</Nav.Link>
@@ -40,7 +43,7 @@ export default function HomeNavbar() {
                     className="me-2"
                     aria-label="Search"
                   />
-                  <Button variant="outline-primary">Search</Button>
+                  <Button variant="outline-primary" onSubmit={searchHandler}>Search</Button>
                 </Form>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
