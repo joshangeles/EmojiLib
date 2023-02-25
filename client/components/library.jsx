@@ -4,7 +4,7 @@ import LoadButton from '../components/load-button.jsx';
 
 export default function Library() {
   const [emojis, setEmojis] = useState([]);
-  const [emojiIndex, setEmojiIndex] = useState(18);
+  const [emojiIndex, setEmojiIndex] = useState(8);
   const basePath = 'api/emojis';
 
   useEffect(() => {
@@ -18,16 +18,17 @@ export default function Library() {
       .catch(error => console.error(error));
   }, []);
 
-  const library = emojis.map((emoji, index) => {
-    if (index >= emojiIndex) return <Fragment key={emoji.emojiId}> </Fragment>;
-    return (
-      <EmojiCard key={emoji.emojiId} name={emoji.name} url={emoji.url} emojiId={emoji.emojiId}/>
-    );
-  });
-
   return (
     <div className='row justify-content-start px-lg-4 ms-2'>
-      {library}
+      {
+        emojis.map((emoji, index) => {
+          return (
+            (index >= emojiIndex)
+              ? <Fragment key={emoji.emojiId} />
+              : <EmojiCard key={emoji.emojiId} name={emoji.name} url={emoji.url} emojiId={emoji.emojiId} />
+          );
+        })
+      }
       <LoadButton setEmojiIndex={setEmojiIndex} emojiIndex={emojiIndex}/>
     </div>
   );
