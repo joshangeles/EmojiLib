@@ -1,12 +1,12 @@
 import React from 'react';
-import HelloWorld from '../components/hello-world';
 import HomeNavbar from '../components/navbar';
+import Library from '../components/library';
 
 export default function Home(props) {
   return (
-    <div className='bg-dark' data-bs-theme="dark">
+    <div className='bg-dark container-fluid px-lg-5' data-bs-theme="dark">
       <HomeNavbar />
-      <HelloWorld />
+      <Library />
     </div>
   );
 }
