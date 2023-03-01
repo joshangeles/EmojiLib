@@ -20,8 +20,8 @@ export default function Library({ results }) {
   if (results) {
     return (
       <div className='row justify-content-start px-lg-4 ms-2'>
+        <h3 className='ms-md-5 ms-4 my-md-4 my-3'>Results</h3>
         <EmojiCard key={results.emojiId} name={results.name} url={results.url} emojiId={results.emojiId} />
-        <LoadButton setEmojiIndex={setEmojiIndex} emojiIndex={emojiIndex} />
       </div>
     );
   }
