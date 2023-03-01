@@ -2,7 +2,7 @@ import React, { useState, useEffect, Fragment } from 'react';
 import EmojiCard from './emojiCard';
 import LoadButton from '../components/load-button.jsx';
 
-export default function Library() {
+export default function Library({ data }) {
   const [emojis, setEmojis] = useState([]);
   const [emojiIndex, setEmojiIndex] = useState(8);
   const basePath = 'api/emojis';
