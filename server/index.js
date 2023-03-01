@@ -2,7 +2,7 @@ require('dotenv/config');
 const express = require('express');
 const staticMiddleware = require('./static-middleware');
 const errorMiddleware = require('./error-middleware');
-const { getLibrary } = require('./routes/get');
+const { getLibrary, getByName, getById } = require('./routes/get');
 
 const app = express();
 
@@ -13,6 +13,8 @@ app.get('/api/hello', (req, res) => {
 });
 
 app.get('/api/emojis', getLibrary);
+app.get('/api/emojis/name/:emojiName', getByName);
+app.get('/api/emojis/id/:emojiId', getById);
 
 app.use(errorMiddleware);
 

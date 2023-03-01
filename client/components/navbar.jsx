@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable no-console */
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -7,9 +8,22 @@ import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
 export default function HomeNavbar() {
+  const [search, setSearch] = useState('');
+  const [results, setResults] = useState([]);
+  const basePath = 'api/emojis/name/';
+  function searchHandler(e) {
 
-  function searchHandler() {
-
+    e.preventDefault();
+    console.log(search);
+    fetch(basePath + search, {
+      method: 'GET'
+    })
+      .then(res => res.json())
+      .then(data => {
+        setResults(data);
+        console.log(results);
+      })
+      .catch(error => console.log(error));
   }
 
   return (
@@ -36,14 +50,18 @@ export default function HomeNavbar() {
                   <Nav.Link href="help">Help</Nav.Link>
                   <Nav.Link href="Upload">Upload</Nav.Link>
                 </Nav>
-                <Form className="d-flex">
+                <Form
+                className="d-flex"
+                onSubmit={searchHandler}
+                value={search}
+                onChange={e => setSearch(e.target.value)}>
                   <Form.Control
                     type="search"
                     placeholder="Search"
                     className="me-2"
                     aria-label="Search"
                   />
-                  <Button variant="outline-primary" onSubmit={searchHandler}>Search</Button>
+                  <Button variant="outline-primary" type="submit">Search</Button>
                 </Form>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
