@@ -2,11 +2,10 @@ import React, { useState, useEffect, Fragment } from 'react';
 import EmojiCard from './emojiCard';
 import LoadButton from '../components/load-button.jsx';
 
-export default function Library({ data }) {
+export default function Library({ results }) {
   const [emojis, setEmojis] = useState([]);
   const [emojiIndex, setEmojiIndex] = useState(8);
   const basePath = 'api/emojis';
-
   useEffect(() => {
     fetch(basePath, {
       method: 'GET'
@@ -17,6 +16,15 @@ export default function Library({ data }) {
       })
       .catch(error => console.error(error));
   }, []);
+
+  if (results) {
+    return (
+      <div className='row justify-content-start px-lg-4 ms-2'>
+        <EmojiCard key={results.emojiId} name={results.name} url={results.url} emojiId={results.emojiId} />
+        <LoadButton setEmojiIndex={setEmojiIndex} emojiIndex={emojiIndex} />
+      </div>
+    );
+  }
 
   return (
     <div className='row justify-content-start px-lg-4 ms-2'>

@@ -7,21 +7,21 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
-export default function HomeNavbar() {
+export default function HomeNavbar({ onQuery }) {
   const [search, setSearch] = useState('');
+  // eslint-disable-next-line no-unused-vars
   const [results, setResults] = useState([]);
   const basePath = 'api/emojis/name/';
   function searchHandler(e) {
-
     e.preventDefault();
-    console.log(search);
+
     fetch(basePath + search, {
       method: 'GET'
     })
       .then(res => res.json())
       .then(data => {
         setResults(data);
-        console.log(results);
+        onQuery(data);
       })
       .catch(error => console.log(error));
   }
@@ -60,6 +60,7 @@ export default function HomeNavbar() {
                     placeholder="Search"
                     className="me-2"
                     aria-label="Search"
+                    required
                   />
                   <Button variant="outline-primary" type="submit">Search</Button>
                 </Form>
