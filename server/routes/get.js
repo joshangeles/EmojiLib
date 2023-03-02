@@ -1,6 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 const db = require('../db');
 const { json, error } = require('../status');
+
+/**
+ * Get Library endpoint
+ * @returns an array of all `emoji` objects within the EmojiLib Database.
+ */
 const getLibrary = (req, res, next) => {
   const sql = `
   SELECT * FROM "emojis"
@@ -16,13 +21,18 @@ const getLibrary = (req, res, next) => {
 
 };
 
+/**
+ * Get By Name endpoint
+ * @returns an array of `emoji` objects whose `name` property contains the query
+ */
 const getByName = (req, res, next) => {
   const sql = `
     SELECT *
       FROM "emojis"
     WHERE "name" LIKE $1;
   `;
-
+  // Capitalizes first letter of requested emoji name and introduces %
+  // % searches for any emojis that contain the query in any position
   const emojiName = `%${req.params.emojiName.charAt(0).toUpperCase() + req.params.emojiName.slice(1)}%`;
   const params = [emojiName];
 
@@ -37,6 +47,10 @@ const getByName = (req, res, next) => {
 
 };
 
+/**
+ * Get By ID endpoint
+ * @returns an emoji` object whose `emojiId` property matches the query.
+ */
 const getById = (req, res, next) => {
   const sql = `
     SELECT *
