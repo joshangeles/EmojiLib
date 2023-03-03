@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 // For deleting registered slash commands. NOTE: For development purposes only!
 const { REST, Routes } = require('discord.js');
-const { clientId, token } = require('../config.json');
+const { clientId, token } = require('../../config.json');
 const rest = new REST({ version: '10' }).setToken(token);
 
 /**

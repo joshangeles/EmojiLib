@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 // Imports emojis specified when /import is used.
-const createMessage = require('../command-helpers/create-message-object');
+const createMessage = require('./helpers/create-message-object');
 const { SlashCommandBuilder, EmbedBuilder, PermissionsBitField } = require('discord.js/');
 
 module.exports = {
@@ -10,7 +10,7 @@ module.exports = {
     .addStringOption(option => option.setName('list').setDescription('The emoji(s) to be imported').setRequired(true)),
   async execute(interaction) {
     // Check if user has permission to manage emojis/stickers
-    if (!interaction.member.has(PermissionsBitField.Flags.ManageEmojisAndStickers)) {
+    if (!interaction.member.permissions.has(PermissionsBitField.Flags.ManageEmojisAndStickers)) {
       return await interaction.reply(createMessage('User must have Manage Emojis & Stickers permissions!', true));
     }
     /**
