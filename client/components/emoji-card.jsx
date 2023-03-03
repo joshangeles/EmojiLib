@@ -12,7 +12,6 @@ export default function EmojiCard({ name, url, emojiId }) {
             - #{emojiId}
           </Card.Subtitle>
         </Card.Title>
-
       </Card.Body>
     </Card>
   );

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Fragment } from 'react';
-import EmojiCard from './emojiCard';
+import EmojiCard from './emoji-card';
 import LoadButton from '../components/load-button.jsx';
 
 export default function Library({ results }) {
