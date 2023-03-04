@@ -33,7 +33,7 @@ const getByName = (req, res, next) => {
   `;
   // Capitalizes first letter of requested emoji name and introduces %
   // % searches for any emojis that contain the query in any position
-  const emojiName = `%${req.params.emojiName.charAt(0).toUpperCase() + req.params.emojiName.slice(1)}%`;
+  const emojiName = `%${req.params.emojiName.toLowerCase().charAt(0).toUpperCase() + req.params.emojiName.slice(1)}%`;
   const params = [emojiName];
 
   db.query(sql, params)
