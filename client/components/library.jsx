@@ -8,6 +8,7 @@ export default function Library({ results }) {
   // The index to load up to (default 8)
   const [emojiIndex, setEmojiIndex] = useState(8);
   const basePath = 'api/emojis';
+  // Empty dependency array so fetch is only called on first render
   useEffect(() => {
     fetch(basePath, {
       method: 'GET',
@@ -23,7 +24,7 @@ export default function Library({ results }) {
   // If there are search results found from the navbar return those instead
   if (results) {
     return (
-      <div className='row justify-content-start px-lg-4 ms-2'>
+      <div className='row justify-content-between px-lg-4 ms-2'>
         <h3 className='ms-md-5 ms-4 my-md-4 my-3'>Results</h3>
         <EmojiCard key={results.emojiId} name={results.name} url={results.url} emojiId={results.emojiId} />
       </div>
@@ -31,7 +32,7 @@ export default function Library({ results }) {
   }
 
   return (
-    <div className='row justify-content-start px-lg-4 ms-2'>
+    <div className='row justify-content-between px-lg-4 ms-2'>
       {
         // For each emoji found in the array return either a fragment or an emoji card
         emojis.map((emoji, index) => {
