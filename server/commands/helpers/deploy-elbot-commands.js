@@ -1,17 +1,16 @@
 /* eslint-disable no-console */
 const { REST, Routes } = require('discord.js');
-const { clientId, token } = require('../config.json');
+const { clientId, token } = require('../../config.json');
 const fs = require('node:fs');
-const path = require('node:path');
 
 const commands = [];
 // Grabs all command files from the commands directory
-const commandsPath = path.join(__dirname, 'commands');
+const commandsPath = 'server/commands';
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
 const rest = new REST({ version: '10' }).setToken(token);
 
 for (const file of commandFiles) {
-  const command = require(`./commands/${file}`);
+  const command = require(`../${file}`);
   commands.push(command.data.toJSON());
 }
 

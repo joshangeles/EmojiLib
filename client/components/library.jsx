@@ -8,7 +8,8 @@ export default function Library({ results }) {
   const basePath = 'api/emojis';
   useEffect(() => {
     fetch(basePath, {
-      method: 'GET'
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' }
     })
       .then(res => res.json())
       .then(data => {
