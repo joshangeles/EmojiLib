@@ -50,8 +50,7 @@ module.exports = {
           console.log(emoteObject); // Remove after Implementation
           interaction.guild.emojis.create(emoteObject)
             .then(emote => {
-              importedEmojis.push(emoteObject.name);
-              interaction.reply({ embeds: embedMessage('Blue', 'Successfully Imported!', `Successfully imported ${name}`) });
+              importedEmojis.push(emote);
             })
             .catch(err => {
               interaction.reply(createMessage(`Cannot upload ${emote}! Did you reach the server limit?`, true));
@@ -79,5 +78,8 @@ module.exports = {
     if (!hasMultiple) {
       fetchAndCreate(userInput);
     }
+
+    const embed = embedMessage('Blue', 'Hey There!', 'Your imported emoji(s) now available!');
+    interaction.reply({ embeds: [embed] });
   }
 };

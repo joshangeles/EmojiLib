@@ -21,5 +21,5 @@ values ('SmuguAnya','/images/SmuguAnya.png', 1),
        ('Waaaa' ,'/images/Waaaa.png', 1),
        ('DidYouKnow', '/images/DidYouKnow.gif', 1),
        ('Oballma', '/images/Oballma.gif', 1),
-       ('Rollcat', '/images/Rollcat.gif', 1),
-       ('Rollcow', '/images/Rollcow.gif', 1);
+       ('RollCat', '/images/RollCat.gif', 1),
+       ('RollCow', '/images/RollCow.gif', 1);
