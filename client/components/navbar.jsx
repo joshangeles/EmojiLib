@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import Import from './import';
+import Import from './mobile-import';
 
 export default function HomeNavbar({ onQuery, importText }) {
   const [search, setSearch] = useState('');
@@ -29,7 +29,7 @@ export default function HomeNavbar({ onQuery, importText }) {
 
   return (
     <div>
-      {[false, 'sm', 'md', 'lg'].map(size => (
+      {[false, 'sm', 'md', 'lg', 'xl', 'xxl'].map(size => (
         <Navbar key={size} expand={size} className="mb-3 px-lg-5 bg-body-tertiary" bg="dark" variant="dark" fixed="top">
           <Container fluid>
             <Navbar.Brand href="#">EmojiLib</Navbar.Brand>
