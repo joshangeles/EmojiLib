@@ -13,5 +13,5 @@ module.exports = function (color, title, description) {
     .setAuthor({ name: 'EmojiLib', iconURL: 'https://i.imgur.com/okBD858.png', url: 'http://localhost:3000' })
     .setThumbnail('https://media1.giphy.com/media/a0h7sAqON67nO/giphy.gif');
 
-  return embedMessage;
+  return { embeds: [embedMessage] };
 };

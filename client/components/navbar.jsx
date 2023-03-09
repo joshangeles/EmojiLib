@@ -6,8 +6,9 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import Import from './import';
 
-export default function HomeNavbar({ onQuery }) {
+export default function HomeNavbar({ onQuery, importText }) {
   const [search, setSearch] = useState('');
   // eslint-disable-next-line no-unused-vars
   const [results, setResults] = useState([]);
@@ -64,6 +65,9 @@ export default function HomeNavbar({ onQuery }) {
                   />
                   <Button variant="outline-primary" type="submit">Search</Button>
                 </Form>
+                <Nav.Item style={{ marginTop: '125%' }} className='d-md-none' >
+                  <Import importText={importText} />
+                </Nav.Item>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>

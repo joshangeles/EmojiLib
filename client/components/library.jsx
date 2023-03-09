@@ -7,6 +7,8 @@ export default function Library({ results }) {
   const [emojis, setEmojis] = useState([]);
   // The index to load up to (default 8)
   const [emojiIndex, setEmojiIndex] = useState(8);
+  // eslint-disable-next-line no-unused-vars
+  const [selected, setSelected] = useState([]);
   const basePath = 'api/emojis';
   useEffect(() => {
     fetch(basePath, {
@@ -29,7 +31,6 @@ export default function Library({ results }) {
       </div>
     );
   }
-
   return (
     <div className='row justify-content-start px-lg-4 ms-2'>
       {
@@ -39,7 +40,7 @@ export default function Library({ results }) {
             // Return a fragment if the index is larger than the emoji index
             (index >= emojiIndex)
               ? <Fragment key={emoji.emojiId} />
-              : <EmojiCard key={emoji.emojiId} name={emoji.name} url={emoji.url} emojiId={emoji.emojiId} />
+              : <EmojiCard selected={selected} setSelected={setSelected} key={emoji.emojiId} name={emoji.name} url={emoji.url} emojiId={emoji.emojiId} />
           );
         })
       }
