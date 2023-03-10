@@ -47,7 +47,6 @@ module.exports = {
            * @property emoteObject.name - The name of the emoji being imported.
            */
           const emoteObject = { attachment: `/workspaces/final-project/server/public/${data.url}`, name: `${data.name}` };
-          console.log(emoteObject); // Remove after Implementation
           interaction.guild.emojis.create(emoteObject)
             .then(emote => {
               importedEmojis.push(emote);
@@ -71,16 +70,12 @@ module.exports = {
       const emotes = userInput.split(',');
 
       emotes.forEach(emote => {
-        if (interaction.replied || interaction.deferred) {
-          fetchAndCreate(emote);
-        }
+        fetchAndCreate(emote);
       });
     }
     // Run this is there is only a single emoji specified
     if (!hasMultiple) {
-      if (interaction.replied || interaction.deferred) {
-        fetchAndCreate(userInput);
-      }
+      fetchAndCreate(userInput);
     }
 
     const embed = embedMessage('Blue', 'Hey There!', 'Your imported emoji(s) now available!');
