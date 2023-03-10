@@ -1,21 +1,19 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
-export default function LoadButton({ emojiIndex, setEmojiIndex }) {
+export default function MobileLoadButton({ emojiIndex, setEmojiIndex }) {
   // Increase the emoji index by 8 (load 8 more emojis)
   function clickHandler() {
     setEmojiIndex(emojiIndex + 4);
   }
 
   return (
-    <div className='row justify-content-center'>
-      <Button
+    <Button
       className='load p-3'
       variant="success"
-      style={{ width: '50%' }}
+      style={{ width: '100%' }}
       onClick={clickHandler}>
-        Load More Emojis...
-      </Button>
-    </div>
+      Load More Emojis...
+    </Button>
   );
 }
