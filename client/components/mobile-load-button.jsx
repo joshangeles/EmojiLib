@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 export default function MobileLoadButton({ emojiIndex, setEmojiIndex }) {
   // Increase the emoji index by 8 (load 8 more emojis)
   function clickHandler() {
-    setEmojiIndex(emojiIndex + 8);
+    setEmojiIndex(emojiIndex + 4);
   }
 
   return (
