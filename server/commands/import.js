@@ -71,15 +71,19 @@ module.exports = {
       const emotes = userInput.split(',');
 
       emotes.forEach(emote => {
-        fetchAndCreate(emote);
+        if (interaction.replied || interaction.deferred) {
+          fetchAndCreate(emote);
+        }
       });
     }
     // Run this is there is only a single emoji specified
     if (!hasMultiple) {
-      fetchAndCreate(userInput);
+      if (interaction.replied || interaction.deferred) {
+        fetchAndCreate(userInput);
+      }
     }
 
     const embed = embedMessage('Blue', 'Hey There!', 'Your imported emoji(s) now available!');
-    interaction.reply({ embeds: [embed] });
+    interaction.reply(embed);
   }
 };
