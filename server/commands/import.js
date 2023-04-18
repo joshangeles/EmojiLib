@@ -32,7 +32,7 @@ module.exports = {
     const importedEmojis = [];
 
     function fetchAndCreate(emote) {
-      fetch(`http://localhost:3000/api/emojis/name/${emote}`, fetchOptions('GET', 'application/json'))
+      fetch(`/api/emojis/name/${emote}`, fetchOptions('GET', 'application/json'))
         .then(res => res.json())
         .then(data => {
           // Checks if query returned an error and replies accordingly.
@@ -46,7 +46,7 @@ module.exports = {
            * @property emoteObject.attachment - The filepath to the emoji being imported.
            * @property emoteObject.name - The name of the emoji being imported.
            */
-          const emoteObject = { attachment: `/workspaces/final-project/server/public/${data.url}`, name: `${data.name}` };
+          const emoteObject = { attachment: `/server/public/${data.url}`, name: `${data.name}` };
           interaction.guild.emojis.create(emoteObject)
             .then(emote => {
               importedEmojis.push(emote);
