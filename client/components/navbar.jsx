@@ -46,10 +46,8 @@ export default function HomeNavbar({ onQuery, importText }) {
               </Offcanvas.Header>
               <Offcanvas.Body data-bs-theme="dark" className="bg-body-tertiary text-white">
                 <Nav className="justify-content-start flex-grow-1 pe-3">
-                  <Nav.Link href="login">Login</Nav.Link>
                   <Nav.Link href="">Library</Nav.Link>
                   <Nav.Link href="help">Help</Nav.Link>
-                  <Nav.Link href="Upload">Upload</Nav.Link>
                 </Nav>
                 <Form
                 className="d-flex"
