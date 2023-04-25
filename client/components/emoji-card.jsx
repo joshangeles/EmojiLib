@@ -25,7 +25,7 @@ export default function EmojiCard({ name, url, emojiId, selected, setSelected, s
       setSelected(selected.filter(emote => emote !== name));
     }
   }
-  const selectedEmotes = selected.join(',');
+  const selectedEmotes = selected?.join(',');
   setSelectedEmotes(`${selectedEmotes}`);
   return (
     <Card onClick={clickHandler} className='col-4 col-sm-2 m-lg-5 m-md-4 m-3' style={style}>
