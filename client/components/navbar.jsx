@@ -13,6 +13,7 @@ export default function HomeNavbar({ onQuery, importText }) {
   // eslint-disable-next-line no-unused-vars
   const [results, setResults] = useState([]);
   const basePath = 'api/emojis/name/';
+
   function searchHandler(e) {
     e.preventDefault();
 
@@ -24,7 +25,17 @@ export default function HomeNavbar({ onQuery, importText }) {
         setResults(data);
         onQuery(data);
       })
-      .catch(error => console.log(error));
+      .catch(error => {
+        console.log(error);
+        const easterEgg = {
+          emojiId: 404,
+          name: 'NoResultsFound',
+          url: '/images/OhNo.png'
+        };
+
+        setResults(easterEgg);
+        onQuery(easterEgg);
+      });
   }
 
   return (
