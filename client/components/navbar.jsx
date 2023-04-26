@@ -28,7 +28,7 @@ export default function HomeNavbar({ onQuery, importText }) {
       .catch(error => {
         console.log(error);
         const easterEgg = {
-          emojiId: 404,
+          emojiId: 22,
           name: 'NoResultsFound',
           url: '/images/OhNo.png'
         };
