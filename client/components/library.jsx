@@ -41,7 +41,7 @@ export default function Library({ results, setImportText, setSelectedEmotes, imp
         emojis.map((emoji, index) => {
           return (
             // Return a fragment if the index is larger than the emoji index
-            ((index >= emojiIndex) && emoji.name !== 'NoResultsFound')
+            ((index >= emojiIndex))
               ? <Fragment key={emoji.emojiId} />
               : <EmojiCard setImportText={setImportText} setSelectedEmotes={setSelectedEmotes} selected={selected} setSelected={setSelected} key={emoji.emojiId} name={emoji.name} url={emoji.url} emojiId={emoji.emojiId} />
           );
