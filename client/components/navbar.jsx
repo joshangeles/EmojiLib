@@ -27,11 +27,11 @@ export default function HomeNavbar({ onQuery, importText }) {
       })
       .catch(error => {
         console.log(error);
-        const easterEgg = {
-          emojiId: 22,
+        const easterEgg = [{
+          emojiId: 404,
           name: 'NoResultsFound',
           url: '/images/OhNo.png'
-        };
+        }];
 
         setResults(easterEgg);
         onQuery(easterEgg);
