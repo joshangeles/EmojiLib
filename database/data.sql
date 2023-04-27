@@ -23,4 +23,4 @@ values ('SmuguAnya','/images/SmuguAnya.png', 1),
        ('Oballma', '/images/Oballma.gif', 1),
        ('RollCat', '/images/RollCat.gif', 1),
        ('RollCow', '/images/RollCow.gif', 1),
-       ('NoResultsFound', '/images/OhNo.png', 1);
+       ('OhNo', '/images/OhNo.png', 1);
