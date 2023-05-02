@@ -32,7 +32,7 @@ module.exports = {
     const importedEmojis = [];
 
     function fetchAndCreate(emote) {
-      fetch(`http://localhost:3000/api/emojis/name/${emote}`, fetchOptions('GET', 'application/json'))
+      fetch(`/api/emojis/name/${emote}`, fetchOptions('GET', 'application/json'))
         .then(res => res.json())
         .then(data => {
           // Checks if query returned an error and replies accordingly.
