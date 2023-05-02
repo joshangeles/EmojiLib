@@ -23,7 +23,6 @@ export default function Home() {
       <Library setSelectedEmotes={setSelectedEmotes} importText={importText} results={results}>
         <HelpModal />
       </Library>
-
     </div>
   );
 }
