@@ -20,9 +20,8 @@ export default function Home() {
     <div className='bg-dark container-fluid px-lg-5' data-bs-theme="dark">
       <HomeNavbar onQuery={setResults} importText={importText} handleShow={handleShow}/>
       {/* may need to be passed show */}
-      <Library setSelectedEmotes={setSelectedEmotes} importText={importText} results={results}>
-        <HelpModal />
-      </Library>
+      <Library setSelectedEmotes={setSelectedEmotes} importText={importText} results={results} />
+      <HelpModal handleShow={handleShow} setShow={setShow} show={show} />
     </div>
   );
 }
