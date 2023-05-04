@@ -1,7 +1,7 @@
 const pg = require('pg');
 
 const db = new pg.Pool({
-  connectionString: 'postgres://dev:dev@localhost/emojiLib?sslmode=disable',
+  connectionString: process.env.DATABASE_URL,
   ssl: {
     rejectUnauthorized: false
   }
