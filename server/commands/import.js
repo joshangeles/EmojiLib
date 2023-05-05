@@ -46,7 +46,6 @@ module.exports = {
            * @property emoteObject.attachment - The filepath to the emoji being imported.
            * @property emoteObject.name - The name of the emoji being imported.
            */
-          console.log(window.location.pathname);
           const emoteObject = { attachment: `${data.url}`, name: `${data.name}` };
           console.log('Attachment:', emoteObject.attachment);
           interaction.guild.emojis.create(emoteObject)
