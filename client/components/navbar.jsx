@@ -32,7 +32,7 @@ export default function HomeNavbar({ onQuery, importText, handleShow }) {
 
   return (
     <div>
-      {[false, '', 'sm', 'md', 'lg', 'xl', 'xxl'].map(size => (
+      {[false, 'md', 'lg', 'xl', 'xxl'].map(size => (
         <Navbar key={size} expand={size} className="mb-3 px-lg-5 bg-body-tertiary" bg="dark" variant="dark" fixed="top">
           <Container fluid>
             <Navbar.Brand>EmojiLib</Navbar.Brand>
