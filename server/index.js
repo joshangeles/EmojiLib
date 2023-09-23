@@ -10,10 +10,6 @@ const app = express();
 
 app.use(staticMiddleware);
 
-app.get('/api/hello', (req, res) => {
-  res.json({ hello: 'world' });
-});
-
 app.get('/api/emojis', getLibrary);
 app.get('/api/emojis/name/:emojiName', getByName);
 app.get('/api/emojis/id/:emojiId', getById);
