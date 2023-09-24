@@ -26,7 +26,7 @@ export default function Library({ results, setImportText, setSelectedEmotes, imp
   }, []);
 
   // If there the search results array contains valid results, then it will display them
-  if (results.length > 0) {
+  if (results) {
     return (
       <div className='row justify-content-between px-lg-4 ms-2'>
         <h3 className='ms-md-5 ms-4 my-md-4 my-3'>Results</h3>
