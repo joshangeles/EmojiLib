@@ -25,19 +25,13 @@ export default function Library({ results, setImportText, setSelectedEmotes, imp
       .catch(error => console.error(error));
   }, []);
 
-  // If there the search results array contains valid results, then it will display them
-  if (results.length > 0) {
+  // If there are search results found from the navbar return those instead
+  if (results) {
     return (
       <div className='row justify-content-between px-lg-4 ms-2'>
         <h3 className='ms-md-5 ms-4 my-md-4 my-3'>Results</h3>
         <EmojiCard setSelectedEmotes={setSelectedEmotes} setImportText={setImportText} key={results.emojiId} name={results.name} url={results.url} emojiId={results.emojiId} />
       </div>
-    );
-  }
-
-  if (results.length === 0) {
-    return (
-      <div>IT WORKED</div>
     );
   }
   return (
