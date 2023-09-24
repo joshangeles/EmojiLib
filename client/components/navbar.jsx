@@ -27,7 +27,9 @@ export default function HomeNavbar({ onQuery, importText, handleShow }) {
       })
       .catch(error => {
         console.log(error);
-        console.log(`Results State: ${results}`);
+        // Somehow get passed a component or indication of no results found
+        setResults([]);
+        onQuery([]);
       });
   }
 
