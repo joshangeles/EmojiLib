@@ -34,6 +34,12 @@ export default function Library({ results, setImportText, setSelectedEmotes, imp
       </div>
     );
   }
+
+  if (results.length === 0) {
+    return (
+      <div>IT WORKED</div>
+    );
+  }
   return (
     <div className='row justify-content-lg-center justify-content-md-between justify-content-center px-md-4 ms-md-5'>
       {
