@@ -24,7 +24,9 @@ export default function HomeNavbar({ onQuery, hasEmotes, importText, handleShow 
       .then(data => {
         setResults(data);
         onQuery(data);
-        hasEmotes(true);
+        if (!data.error) {
+          hasEmotes(true);
+        }
         console.log(data);
       })
       .catch(error => {
