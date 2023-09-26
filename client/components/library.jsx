@@ -4,7 +4,7 @@ import MobileLoadButton from '../components/mobile-load-button.jsx';
 import DesktopLoadButton from './desktop-load-button';
 import Import from './desktop-import';
 
-export default function Library({ results, setImportText, setSelectedEmotes, importText }) {
+export default function Library({ results, setImportText, setSelectedEmotes, importText, hasEmotes }) {
   // The array of emojis retrieved from the fetch request
   const [emojis, setEmojis] = useState([]);
   // The index to load up to (default 8)
@@ -24,9 +24,10 @@ export default function Library({ results, setImportText, setSelectedEmotes, imp
       })
       .catch(error => console.error(error));
   }, []);
-
+  // eslint-disable-next-line no-console
+  console.log(hasEmotes);
   // If there the search results array contains valid results, then it will display them
-  if (typeof results === 'object') {
+  if (results) {
     return (
       <div className='row justify-content-between px-lg-4 ms-2'>
         <h3 className='ms-md-5 ms-4 my-md-4 my-3'>Results</h3>
@@ -35,7 +36,7 @@ export default function Library({ results, setImportText, setSelectedEmotes, imp
     );
   }
 
-  if (results === false) {
+  if (hasEmotes) {
     return (
       <div>
         <h1>Success! Now make an actual component for this lol</h1>
