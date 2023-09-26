@@ -28,6 +28,7 @@ export default function HomeNavbar({ onQuery, importText, handleShow }) {
       })
       .catch(error => {
         console.log(error);
+        onQuery(false);
         // Somehow get passed a component or indication of no results found
       });
   }
