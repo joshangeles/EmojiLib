@@ -10,7 +10,7 @@ export default function Home() {
   const [selectedEmotes, setSelectedEmotes] = useState('');
   // eslint-disable-next-line no-unused-vars
   const [show, setShow] = useState(false);
-  const [emotesFound, setEmotesFound] = useState(true);
+  const [emotesFound, setEmotesFound] = useState(null);
 
   const handleShow = () => setShow(true);
 

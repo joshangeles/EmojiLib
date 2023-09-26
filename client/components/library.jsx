@@ -36,7 +36,7 @@ export default function Library({ results, setImportText, setSelectedEmotes, imp
     );
   }
 
-  if (!hasEmotes) {
+  if (hasEmotes === false) {
     return (
       <div>
         <h1>Success! Now make an actual component for this lol</h1>
