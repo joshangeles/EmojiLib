@@ -24,6 +24,7 @@ export default function HomeNavbar({ onQuery, importText, handleShow }) {
       .then(data => {
         setResults(data);
         onQuery(data);
+        console.log(data);
       })
       .catch(error => {
         console.log(error);
