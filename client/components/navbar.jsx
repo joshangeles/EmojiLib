@@ -24,13 +24,14 @@ export default function HomeNavbar({ onQuery, hasEmotes, importText, handleShow 
       .then(data => {
         setResults(data);
         onQuery(data);
-        if (!data.error) {
+        if (data.error) {
+          hasEmotes(false);
+        } else {
           hasEmotes(true);
         }
         console.log(data);
       })
       .catch(error => {
-        hasEmotes(false);
         console.log(error);
         // Somehow get passed a component or indication of no results found
       });
