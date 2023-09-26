@@ -8,7 +8,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Import from './mobile-import';
 
-export default function HomeNavbar({ onQuery, importText, handleShow }) {
+export default function HomeNavbar({ onQuery, hasEmotes, importText, handleShow }) {
   const [search, setSearch] = useState('');
   // eslint-disable-next-line no-unused-vars
   const [results, setResults] = useState([]);
@@ -28,7 +28,7 @@ export default function HomeNavbar({ onQuery, importText, handleShow }) {
       })
       .catch(error => {
         console.log(error);
-        onQuery(false);
+        hasEmotes(false);
         // Somehow get passed a component or indication of no results found
       });
   }

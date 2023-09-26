@@ -10,6 +10,7 @@ export default function Home() {
   const [selectedEmotes, setSelectedEmotes] = useState('');
   // eslint-disable-next-line no-unused-vars
   const [show, setShow] = useState(false);
+  const [emotesFound, setEmotesFound] = useState(true);
 
   const handleShow = () => setShow(true);
 
@@ -18,9 +19,9 @@ export default function Home() {
   }, [selectedEmotes]);
   return (
     <div className='bg-dark container-fluid px-lg-5' data-bs-theme="dark">
-      <HomeNavbar onQuery={setResults} importText={importText} handleShow={handleShow}/>
+      <HomeNavbar onQuery={setResults} hasEmotes={setEmotesFound} importText={importText} handleShow={handleShow}/>
       {/* may need to be passed show */}
-      <Library setSelectedEmotes={setSelectedEmotes} importText={importText} results={results} />
+      <Library setSelectedEmotes={setSelectedEmotes} importText={importText} results={results} hasEmotes={emotesFound} />
       <HelpModal handleShow={handleShow} setShow={setShow} show={show} />
     </div>
   );
