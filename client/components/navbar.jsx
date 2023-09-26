@@ -24,10 +24,10 @@ export default function HomeNavbar({ onQuery, hasEmotes, importText, handleShow 
       .then(data => {
         setResults(data);
         onQuery(data);
-        if (!data.error) {
-          hasEmotes(true);
-        } else {
+        if (data.error) {
           hasEmotes(false);
+        } else {
+          hasEmotes(true);
         }
         console.log(data);
       })
