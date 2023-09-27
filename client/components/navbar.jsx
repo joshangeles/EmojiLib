@@ -8,7 +8,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Import from './mobile-import';
 
-export default function HomeNavbar({ onQuery, hasEmotes, importText, handleShow }) {
+export default function HomeNavbar({ onQuery, hasEmotes, importText, handleShow, setEmojis, emojis }) {
   const [search, setSearch] = useState('');
   // eslint-disable-next-line no-unused-vars
   const [results, setResults] = useState([]);
@@ -29,12 +29,23 @@ export default function HomeNavbar({ onQuery, hasEmotes, importText, handleShow 
         } else {
           hasEmotes(true);
         }
-        console.log(data);
       })
       .catch(error => {
         console.log(error);
-        // Somehow get passed a component or indication of no results found
       });
+  }
+
+  function renderLibrary() {
+    fetch(basePath, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' }
+    })
+      .then(res => res.json())
+      .then(data => {
+        setEmojis(data);
+        console.log(emojis);
+      })
+      .catch(error => console.error(error));
   }
 
   return (
@@ -56,7 +67,7 @@ export default function HomeNavbar({ onQuery, hasEmotes, importText, handleShow 
               </Offcanvas.Header>
               <Offcanvas.Body data-bs-theme="dark" className="bg-body-tertiary text-white">
                 <Nav className="justify-content-start flex-grow-1 pe-3">
-                  <Nav.Link href="">Library</Nav.Link>
+                  <Nav.Link onClick={renderLibrary}>Library</Nav.Link>
                   <Nav.Link onClick={handleShow}>Help</Nav.Link>
                 </Nav>
                 <Form
