@@ -34,7 +34,7 @@ export default function Library({ results, setImportText, setSelectedEmotes, imp
           <h2>No results found...</h2>
         </div>
         <div className='row px-md-4 pt-3 mt-2'>
-          <img src='https://media.tenor.com/FcVg5W9zZJQAAAAC/error.gif' className='rounded-lg'/>
+          <img src='https://media.tenor.com/FcVg5W9zZJQAAAAC/error.gif' style={{ minHeight: '30%' }} className='img-fluid text-md-start rounded-lg'/>
         </div>
       </div>
     );
