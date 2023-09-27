@@ -36,7 +36,7 @@ export default function Library({ results, setImportText, setSelectedEmotes, imp
         <div className='row px-md-4 pt-3 mt-2'>
           <div className='col-12'>
             <div className='rounded-lg text-md-start' style={{ maxHeight: '30%' }}>
-              <img src='https://media.tenor.com/FcVg5W9zZJQAAAAC/error.gif'/>
+              <img src='https://media.tenor.com/FcVg5W9zZJQAAAAC/error.gif'className='img-fluid'/>
             </div>
           </div>
         </div>
