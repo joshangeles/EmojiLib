@@ -29,8 +29,13 @@ export default function Library({ results, setImportText, setSelectedEmotes, imp
 
   if (hasEmotes === false) {
     return (
-      <div>
-        <h1>Success! Now make an actual component for this lol</h1>
+      <div className='row px-md-4 pt-3 mt-2'>
+        <div className='col-sm-12'>
+          <h2>No results found...</h2>
+        </div>
+        <div className='row px-md-4 pt-3 mt-2'>
+          <img src='https://media.tenor.com/FcVg5W9zZJQAAAAC/error.gif' className='rounded-lg'/>
+        </div>
       </div>
     );
   }
