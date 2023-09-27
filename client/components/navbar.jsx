@@ -36,7 +36,7 @@ export default function HomeNavbar({ onQuery, hasEmotes, importText, handleShow,
   }
 
   function renderLibrary() {
-    fetch(basePath, {
+    fetch('api/emojis', {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' }
     })
