@@ -23,7 +23,7 @@ export default function Library({ results, setImportText, setSelectedEmotes, imp
         setEmojis(data);
       })
       .catch(error => console.error(error));
-  }, [hasEmotes]);
+  }, []);
   // eslint-disable-next-line no-console
   console.log(hasEmotes);
 
