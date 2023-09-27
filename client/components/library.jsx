@@ -34,7 +34,11 @@ export default function Library({ results, setImportText, setSelectedEmotes, imp
           <h2>No results found...</h2>
         </div>
         <div className='row px-md-4 pt-3 mt-2'>
-          <img src='https://media.tenor.com/FcVg5W9zZJQAAAAC/error.gif' style={{ minHeight: '30%' }} className='img-fluid text-md-start rounded-lg'/>
+          <div className='col-12'>
+            <div className='rounded-lg text-md-start' style={{ maxHeight: '30%' }}>
+              <img src='https://media.tenor.com/FcVg5W9zZJQAAAAC/error.gif'/>
+            </div>
+          </div>
         </div>
       </div>
     );
