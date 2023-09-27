@@ -4,9 +4,7 @@ import MobileLoadButton from '../components/mobile-load-button.jsx';
 import DesktopLoadButton from './desktop-load-button';
 import Import from './desktop-import';
 
-export default function Library({ results, setImportText, setSelectedEmotes, importText, hasEmotes }) {
-  // The array of emojis retrieved from the fetch request
-  const [emojis, setEmojis] = useState([]);
+export default function Library({ results, setImportText, setSelectedEmotes, importText, hasEmotes, setEmojis, emojis }) {
   // The index to load up to (default 8)
   const [emojiIndex, setEmojiIndex] = useState(8);
   // eslint-disable-next-line no-unused-vars
@@ -23,9 +21,8 @@ export default function Library({ results, setImportText, setSelectedEmotes, imp
         setEmojis(data);
       })
       .catch(error => console.error(error));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  // eslint-disable-next-line no-console
-  console.log(hasEmotes);
 
   if (hasEmotes === false) {
     return (

@@ -42,6 +42,7 @@ export default function HomeNavbar({ onQuery, hasEmotes, importText, handleShow,
     })
       .then(res => res.json())
       .then(data => {
+        onQuery(null);
         setEmojis(data);
         console.log(emojis);
       })
