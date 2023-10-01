@@ -23,6 +23,9 @@ export default function Library({ results, setImportText, setSelectedEmotes, imp
       .catch(error => console.error(error));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  let text = 'Load More Emojis...';
+
+  if (emojiIndex > 22) text = 'All Emojis Loaded!';
 
   if (hasEmotes === false) {
     return (
@@ -70,7 +73,7 @@ export default function Library({ results, setImportText, setSelectedEmotes, imp
       </div>
       <div className='d-md-flex d-none row justify-content-end gx-3'>
         <div className='d-flex col-fluid justify-content-between'>
-          <DesktopLoadButton setEmojiIndex={setEmojiIndex} emojiIndex={emojiIndex} />
+          <DesktopLoadButton text={text} setEmojiIndex={setEmojiIndex} emojiIndex={emojiIndex} />
           <Import importText={importText}/>
         </div>
       </div>

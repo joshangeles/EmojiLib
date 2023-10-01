@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
-export default function DesktopLoadButton({ emojiIndex, setEmojiIndex }) {
+export default function DesktopLoadButton({ emojiIndex, setEmojiIndex, text }) {
   // Increase the emoji index by 8 (load 8 more emojis)
   function clickHandler() {
     setEmojiIndex(emojiIndex + 8);
@@ -13,7 +13,7 @@ export default function DesktopLoadButton({ emojiIndex, setEmojiIndex }) {
         variant="success"
         style={{ width: '45%' }}
         onClick={clickHandler}>
-      Load More Emojis...
+      {text}
     </Button>
   );
 }
