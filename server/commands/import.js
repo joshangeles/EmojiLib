@@ -32,8 +32,9 @@ module.exports = {
      */
     const importedEmojis = [];
 
+    // https://emoji-lib.herokuapp.com may need to be changed back to localhost:3000 for local development.
     function fetchAndCreate(emote) {
-      fetch(`${process.env.FETCH_URL}/api/emojis/name/${emote}`, fetchOptions('GET', 'application/json'))
+      fetch(`https://emoji-lib.herokuapp.com/api/emojis/name/${emote}`, fetchOptions('GET', 'application/json'))
         .then(res => res.json())
         .then(data => {
           // Checks if query returned an error and replies accordingly.
@@ -47,7 +48,7 @@ module.exports = {
            * @property emoteObject.attachment - The filepath to the emoji being imported.
            * @property emoteObject.name - The name of the emoji being imported.
            */
-          const emoteObject = { attachment: `${process.env.FETCH_URL}${data.url}`, name: `${data.name}` };
+          const emoteObject = { attachment: `https://emoji-lib.herokuapp.com${data.url}`, name: `${data.name}` };
           console.log('Attachment:', emoteObject.attachment);
           interaction.guild.emojis.create(emoteObject)
             .then(emote => {
