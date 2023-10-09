@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 const { REST, Routes } = require('discord.js');
 const fs = require('node:fs');
+require('dotenv/config');
 
 const commands = [];
 // Grabs all command files from the commands directory
@@ -20,7 +21,7 @@ for (const file of commandFiles) {
     // The put method is used to fully refresh all commands in the server with
     // the current set within the commands array.
     const data = await rest.put(
-      Routes.applicationCommands(process.env.CLIENT_ID),
+      Routes.applicationCommands(process.env.DISCORD_APPCLIENT_TOKEN),
       { body: commands }
     );
       // NOTE: Registered commands are stored by Discord, so this only needs to
