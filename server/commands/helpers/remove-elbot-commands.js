@@ -15,14 +15,14 @@ for (const commandId of commands) {
   // This timeout is set to buffer delete requests to prevent rejections.
   setTimeout(() => {
     // This code block send a delete request to the Discord API for each commandId found in the commands array.
-    rest.delete(Routes.applicationCommand(process.env.DISCORD_APPCLIENT_TOKEN, `${commandId}`))
+    rest.delete(Routes.applicationCommand(process.env.CLIENT_ID, `${commandId}`))
       .then(() => console.log(`Successfully deleted application command #${commandId}`))
       .catch(console.error);
   }, 1000);
 }
 
 if (commands.length === 0) {
-  rest.put(Routes.applicationCommands(process.env.DISCORD_APPCLIENT_TOKEN), { body: [] })
+  rest.put(Routes.applicationCommands(process.env.CLIENT_ID), { body: [] })
     .then(() => console.log('Successfully deleted all application commands.'))
     .catch(console.error);
 }

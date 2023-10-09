@@ -21,7 +21,7 @@ for (const file of commandFiles) {
     // The put method is used to fully refresh all commands in the server with
     // the current set within the commands array.
     const data = await rest.put(
-      Routes.applicationCommands(process.env.DISCORD_APPCLIENT_TOKEN),
+      Routes.applicationCommands(process.env.CLIENT_ID),
       { body: commands }
     );
       // NOTE: Registered commands are stored by Discord, so this only needs to
