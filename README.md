@@ -56,6 +56,8 @@ EmojiLib is an application that I built to import multiple emojis into Discord s
 6. Import the [provided schema](database/schema.sql) and any [data](database/data.sql) via console with \
 `npm run db:import`
 
+To start developing simply run `npm run dev` via console
+To create a production build simply run `npm run build` via console
 
 ## Additional-Documentation
 * [Command Creation](server/commands/command-creation.md)
