@@ -36,12 +36,20 @@ EmojiLib is an application that I built to import multiple emojis into Discord s
 * [PostgreSQL (^14.5)](https://www.postgresql.org/download/ "Download PostgreSql here")
 * [Git](https://git-scm.com/downloads "Download Git here")
 
-<details>
-<summary>## Developing-Locally</summary>
-### Getting-Started
+## Getting-Started
 1. Clone the repository via console with \
-`git clone https://github.com/joshangeles/FullSend.git`
+`git clone https://github.com/joshangeles/EmojiLib.git`
 2. Install dependencies via console with \
 `npm install`
-3.
-</details>
+3. Create your `.env` file via console with \
+`cp .env.example .env`
+4. Replace the placeholder values within the new `.env` file with your bot's information
+5. Start PostgreSQL and create a database if you don't have one via console with \
+`sudo service postgresql start` and `createdb <database-name>`
+6. Import the [provided schema](database/schema.sql) and any [data](database/data.sql) via console with \
+`npm run db:import`
+
+
+## Additional-Documentation
+* [Command Creation](server/commands/command-creation.md)
+* [Command Helpers](server/commands/helpers/command-helpers.md)
