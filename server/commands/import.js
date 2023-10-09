@@ -32,6 +32,7 @@ module.exports = {
      */
     const importedEmojis = [];
 
+    // Remember to check that the fetch url is set correctly!
     function fetchAndCreate(emote) {
       fetch(`${process.env.FETCH_URL}/api/emojis/name/${emote}`, fetchOptions('GET', 'application/json'))
         .then(res => res.json())

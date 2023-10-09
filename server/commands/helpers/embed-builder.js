@@ -10,7 +10,7 @@ module.exports = function (color, title, description) {
     .setColor(color)
     .setTitle(title)
     .setDescription(description)
-    .setAuthor({ name: 'EmojiLib', iconURL: 'https://i.imgur.com/okBD858.png', url: 'emoji-lib.herokuapp.com' })
+    .setAuthor({ name: 'EmojiLib', iconURL: 'https://i.imgur.com/okBD858.png', url: 'https://emoji-lib.herokuapp.com/' })
     .setThumbnail('https://media1.giphy.com/media/a0h7sAqON67nO/giphy.gif');
 
   return { embeds: [embedMessage] };
