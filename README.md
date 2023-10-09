@@ -23,7 +23,14 @@ EmojiLib is an application that I built to import multiple emojis into Discord s
 * Import emojis into their server via EmojiLib's Discord bot
 
 ## Demo
-![A demo of the search and notes feature](/images/demo.gif "A demo of the search and notes feature")
+<details>
+  <summary>A demo of a user selecting their desired emojis</summary>
+  <img alt="The User selects the emojis they wish to import" src="https://github.com/joshangeles/EmojiLib/assets/68949703/cd1a67b3-dbc4-412f-ad8f-32dd2795b282">
+</details>
+<details>
+  <summary>A demo of the Discord Bot importing emojis</summary>
+  <img alt="The User imports the selected emojis via the EmojiLib Discord Bot" src="https://github.com/joshangeles/EmojiLib/assets/68949703/8de91fe0-5bea-4122-97ab-89b16a3c7cef">
+</details>
 
 ## Stretch-Features
 #### Users can...
